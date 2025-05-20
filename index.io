@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bird Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Bird Photography</h1>
+        <p>Capturing the beauty of birds in the wild</p>
+    </header>
+
+    <section class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="grid">
+            <img src="https://via.placeholder.com/300x200?text=Bird+1" alt="Bird 1">
+            <img src="https://via.placeholder.com/300x200?text=Bird+2" alt="Bird 2">
+            <img src="https://via.placeholder.com/300x200?text=Bird+3" alt="Bird 3">
+            <img src="https://via.placeholder.com/300x200?text=Bird+4" alt="Bird 4">
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a nature enthusiast with a passion for bird photography. I love capturing unique moments of birds in their natural habitats and sharing that beauty with others.</p>
+    </section>
+
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Email me at: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Bird Photography</p>
+    </footer>
+</body>
+</html>
