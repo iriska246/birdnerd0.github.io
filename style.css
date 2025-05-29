@@ -15,6 +15,18 @@ header h1 {
     margin: 0;
 }
 
+.gallery-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007b5e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gallery-link:hover {
+  text-decoration: underline;
+}
+
 section {
     padding: 2rem;
     max-width: 900px;
