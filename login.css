@@ -10,16 +10,17 @@ header h1 {
   font-size: 2rem;
 }
 
-/* Body and main layout */
+/* Body and full layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f7f6;
   margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
+/* Main fills remaining space and centers the content */
 main {
   flex: 1;
   display: flex;
@@ -40,7 +41,7 @@ main {
   text-align: center;
 }
 
-/* Heading inside login box */
+/* Heading */
 .login-container h2 {
   margin-bottom: 1.5rem;
   color: #007b5e;
@@ -83,12 +84,13 @@ button:hover {
 
 /* Error message */
 #error {
+  display: none;
   margin-top: 1rem;
   color: red;
   font-size: 0.95rem;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 400px) {
   .login-container {
     margin: 0 1rem;
