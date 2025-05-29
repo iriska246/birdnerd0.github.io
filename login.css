@@ -1,24 +1,30 @@
-/* Base body styles */
-
+/* Header bar at the top */
 header {
-    background-color: #aadcd6;
-    padding: 2rem;
-    text-align: center;
+  background-color: #aadcd6;
+  padding: 2rem;
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
+/* Set body layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f7f6;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Center login form in available space */
+main {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-size: 18px;
 }
 
 /* Login form container */
