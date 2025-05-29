@@ -1,4 +1,4 @@
-/* Header bar at the top */
+/* Header bar */
 header {
   background-color: #aadcd6;
   padding: 2rem;
@@ -7,9 +7,10 @@ header {
 
 header h1 {
   margin: 0;
+  font-size: 2rem;
 }
 
-/* Set body layout */
+/* Body and main layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f7f6;
@@ -19,12 +20,12 @@ body {
   min-height: 100vh;
 }
 
-/* Center login form in available space */
 main {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* Login form container */
@@ -39,7 +40,7 @@ main {
   text-align: center;
 }
 
-/* Heading */
+/* Heading inside login box */
 .login-container h2 {
   margin-bottom: 1.5rem;
   color: #007b5e;
@@ -85,4 +86,12 @@ button:hover {
   margin-top: 1rem;
   color: red;
   font-size: 0.95rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .login-container {
+    margin: 0 1rem;
+    width: 100%;
+  }
 }
