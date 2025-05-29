@@ -24,12 +24,11 @@
     function validateLogin() {
       const user = document.getElementById('username').value.trim();
       const pass = document.getElementById('password').value;
-
       if (user === "Julia" && pass === "mybirds") {
-        // Redirect to gallery.html
-        window.location.href = "gallery.html";
-        return false; // Prevent form submission
-      } else {
+        localStorage.setItem("loggedIn", "true");  // Store login state
+        window.location.href = "gallery.html";     // Redirect to gallery
+      }
+       else {
         // Show error message
         document.getElementById('error').style.display = "block";
         return false; // Prevent form submission
