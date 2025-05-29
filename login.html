@@ -3,37 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-<link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <div class="login-container">
-    <form onsubmit="return validateLogin()">
+  <header>
+    <h1>Photo Gallery</h1>
+  </header>
 
-      <label for="username">Username</label>
-      <input type="text" id="username" required>
+  <main>
+    <div class="login-container">
+      <h2>Login to Photo Gallery</h2>
+      <form onsubmit="return validateLogin()">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
 
-      <button type="submit">Login</button>
-    </form>
-    <p id="error" style="color:red; display:none;">Invalid credentials. Please try again.</p>
-  </div>
+        <button type="submit">Login</button>
+      </form>
+      <p id="error" style="display:none;">Invalid credentials. Please try again.</p>
+    </div>
+  </main>
 
   <script>
-function validateLogin() {
-  const user = document.getElementById('username').value.trim();
-  const pass = document.getElementById('password').value;
+    function validateLogin() {
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value;
 
-  if (user === "Julia" && pass === "mybirds") {
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "gallery.html";
-    return false;
-  } else {
-    document.getElementById('error').style.display = "block";
-    return false;
-  }
-}
+      if (user === "Julia" && pass === "mybirds") {
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "gallery.html";
+        return false;
+      } else {
+        document.getElementById('error').style.display = "block";
+        return false;
+      }
+    }
   </script>
 </body>
 </html>
