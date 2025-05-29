@@ -1,4 +1,15 @@
 /* Base body styles */
+
+header {
+    background-color: #aadcd6;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f2f7f6;
