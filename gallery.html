@@ -5,6 +5,13 @@
     <title>Bird Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    // Redirect to login if not logged in
+    window.location.href = "login.html";
+  }
+</script>
+
 <body>
     <header>
         <h1>Bird Photo Gallery</h1>
