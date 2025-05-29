@@ -22,15 +22,17 @@
 
   <script>
     function validateLogin() {
-      const user = document.getElementById('username').value;
+      const user = document.getElementById('username').value.trim();
       const pass = document.getElementById('password').value;
 
       if (user === "Julia" && pass === "mybirds") {
-        window.location.href = "gallery.html"; // redirect on success
-        return false;
+        // Redirect to gallery.html
+        window.location.href = "gallery.html";
+        return false; // Prevent form submission
       } else {
+        // Show error message
         document.getElementById('error').style.display = "block";
-        return false; // prevent form from submitting
+        return false; // Prevent form submission
       }
     }
   </script>
