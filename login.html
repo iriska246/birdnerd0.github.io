@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Login</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="login.css" />
 </head>
 <body>
   <header>
@@ -15,28 +15,28 @@
       <h2>Login to Photo Gallery</h2>
       <form onsubmit="return validateLogin()">
         <label for="username">Username</label>
-        <input type="text" id="username" required>
+        <input type="text" id="username" required />
 
         <label for="password">Password</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" required />
 
         <button type="submit">Login</button>
       </form>
-      <p id="error" style="display:none;">Invalid credentials. Please try again.</p>
+      <p id="error">Invalid credentials. Please try again.</p>
     </div>
   </main>
 
   <script>
     function validateLogin() {
-      const user = document.getElementById('username').value.trim();
-      const pass = document.getElementById('password').value;
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value;
 
       if (user === "Julia" && pass === "mybirds") {
         localStorage.setItem("loggedIn", "true");
         window.location.href = "gallery.html";
         return false;
       } else {
-        document.getElementById('error').style.display = "block";
+        document.getElementById("error").style.display = "block";
         return false;
       }
     }
