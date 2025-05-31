@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    position: relative; /* Needed for absolute positioning inside header */
     background-color: #aadcd6;
     padding: 2rem;
     text-align: center;
@@ -16,20 +17,39 @@ header h1 {
 }
 
 nav {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .gallery-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #007b5e;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007b5e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .gallery-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+/* NEW: Top-right signup/order links */
+.top-right-links {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.top-right-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #004f47;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.top-right-links a:hover {
+    text-decoration: underline;
 }
 
 section {
