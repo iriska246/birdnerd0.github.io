@@ -2,44 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Login</title>
-  <link rel="stylesheet" href="login.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - My Bird Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .top-right-links {
+      position: absolute;
+      top: 1.2rem;
+      right: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .top-right-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .top-right-links a:hover {
+      border-color: #fff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .login-box {
+      max-width: 400px;
+      width: 100%;
+      border: 1px solid #000;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #000;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+  </style>
 </head>
 <body>
   <header>
-    <h1>Photo Gallery</h1>
+    <div class="top-right-links">
+      <a href="signup.html">Sign Up</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <h1>My Bird Photography</h1>
   </header>
 
   <main>
-    <div class="login-container">
-      <h2>Login to Photo Gallery</h2>
-      <form onsubmit="return validateLogin()">
-        <label for="username">Username</label>
-        <input type="text" id="username" required />
-
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
-
-        <button type="submit">Login</button>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="submit_login.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
       </form>
-      <p id="error">Invalid credentials. Please try again.</p>
     </div>
   </main>
 
-  <script>
-    function validateLogin() {
-      const user = document.getElementById("username").value.trim();
-      const pass = document.getElementById("password").value;
-
-      if (user === "Julia" && pass === "mybirds") {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "gallery.html";
-        return false;
-      } else {
-        document.getElementById("error").style.display = "block";
-        return false;
-      }
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 My Bird Photography</p>
+  </footer>
 </body>
 </html>
