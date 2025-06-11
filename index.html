@@ -1,49 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bird Photography</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Bird Photography</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fdf9f6;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #2e6f5e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #166143;
+    }
+
+    /* Black Top Bar */
+    .top-bar {
+      background-color: #000;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      padding: 1.5rem 1rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .top-right-links {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 1rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .top-right-links a {
+      color: #2e6f5e;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .top-right-links a:hover {
+      background-color: #e6f0ec;
+    }
+
+    header h1 {
+      margin: 0.5rem 0 0.2rem 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #1f4b3a;
+      text-align: center;
+    }
+
+    header p {
+      margin: 0 0 1rem 0;
+      font-style: italic;
+      color: #666;
+      text-align: center;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    nav .gallery-link {
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #2e6f5e;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      box-shadow: 0 3px 6px rgba(46,111,94,0.4);
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    nav .gallery-link:hover {
+      background: #166143;
+      box-shadow: 0 6px 12px rgba(22,97,67,0.5);
+    }
+
+    /* Gallery */
+    .gallery {
+      max-width: 960px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 1.25rem;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* About */
+    .about {
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .about h2 {
+      font-weight: 700;
+      color: #1f4b3a;
+      margin-bottom: 0.8rem;
+      font-size: 1.75rem;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 720px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .contact h2 {
+      font-weight: 700;
+      color: #1f4b3a;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .contact a {
+      font-weight: 600;
+      color: #2e6f5e;
+    }
+
+    /* Footer */
+    footer {
+      background: #2e6f5e;
+      color: #fdf9f6;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.3rem;
+      }
+      nav .gallery-link {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+      }
+      .top-right-links {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <!-- New top-right links -->
-        <div class="top-right-links">
-            <a href="signup.html">Sign Up</a>
-            <a href="cart.html">Cart</a>
-        </div>
 
-        <h1>My Bird Photography</h1>
-        <p>Capturing the beauty of birds in the wild</p>
-        <nav>
-            <a href="login.html" class="gallery-link">Login to Photo Gallery</a>
-        </nav>
-    </header>
+  <!-- Black Bar -->
+  <div class="top-bar">
+    ✨ Free shipping on orders $75+ ✨
+  </div>
 
-    <section class="gallery">
-        <div class="grid">
-            <img src="images/bird1.jpg" alt="Beautiful bird">
-            <img src="images/bird2.JPG" alt="Beautiful bird">
-            <img src="images/bird3.JPG" alt="Beautiful bird">
-            <img src="images/bird4.JPG" alt="Beautiful bird">
-            <img src="images/bird5.JPG" alt="Beautiful bird">
-            <img src="images/bird6.JPG" alt="Beautiful bird">
-        </div>
-    </section>
+  <!-- Header -->
+  <header>
+    <div class="top-right-links">
+      <a href="signup.html">Sign Up</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <h1>My Bird Photography</h1>
+    <p>Capturing the beauty of birds in the wild</p>
+    <nav>
+      <a href="login.html" class="gallery-link">Login to Photo Gallery</a>
+    </nav>
+  </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a nature enthusiast with a passion for bird photography. I love capturing unique moments of birds in their natural habitats and sharing that beauty with others.</p>
-    </section>
+  <!-- Gallery -->
+  <section class="gallery">
+    <div class="grid">
+      <img src="images/bird1.jpg" alt="Beautiful bird" />
+      <img src="images/bird2.JPG" alt="Beautiful bird" />
+      <img src="images/bird3.JPG" alt="Beautiful bird" />
+      <img src="images/bird4.JPG" alt="Beautiful bird" />
+      <img src="images/bird5.JPG" alt="Beautiful bird" />
+      <img src="images/bird6.JPG" alt="Beautiful bird" />
+    </div>
+  </section>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email me at: <a href="mailto:irina.toronto@gmail.com">irina.toronto@gmail.com</a></p>
-    </section>
+  <!-- About -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm a nature enthusiast with a passion for bird photography. I love capturing unique moments of birds in their natural habitats and sharing that beauty with others.
+    </p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 My Bird Photography</p>
-    </footer>
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:irina.toronto@gmail.com">irina.toronto@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Bird Photography</p>
+  </footer>
+
 </body>
 </html>
