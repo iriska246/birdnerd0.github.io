@@ -1,95 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Signup Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - My Bird Photography</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
-    /* Header bar */
-    header {
-      background-color: #aadcd6;
-      padding: 2rem;
-      text-align: center;
+    * {
+      box-sizing: border-box;
     }
 
-    header h1 {
+    html, body {
       margin: 0;
-      font-size: 2rem;
+      padding: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      height: 100%;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      margin: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    main {
-      flex: 1;
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1rem 1.5rem;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 2rem 0;
+      justify-content: space-between;
+      position: relative;
     }
 
-    .signup-form {
-      background: #fff;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px;
+    .site-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
     }
 
-    .signup-form h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #007b5e;
+    .top-right-links {
+      margin-left: auto;
+      display: flex;
+      gap: 1rem;
     }
 
-    .signup-form input[type="text"],
-    .signup-form input[type="email"],
-    .signup-form input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
+    .top-right-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .top-right-links a:hover {
+      text-decoration: underline;
+    }
+
+    .signup-container {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 2rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 8px;
+      flex-grow: 1;
     }
 
-    .signup-form button {
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+
+    input[type="email"],
+    input[type="password"] {
       width: 100%;
-      padding: 10px;
-      background: #007b5e;
-      color: white;
-      border: none;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #000;
       border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
+      background: #fff;
+      color: #000;
     }
 
-    .signup-form button:hover {
-      background: #005f46;
+    button {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Welcome to Bird Calendar Shop</h1>
+    <div class="top-right-links">
+      <a href="signup.html">Sign Up</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <h1 class="site-title">My Bird Photography</h1>
   </header>
 
-  <main>
-    <form class="signup-form" action="submit_signup.php" method="POST">
-      <h2>Sign Up</h2>
-      <input type="text" name="first_name" placeholder="First Name" required>
-      <input type="text" name="last_name" placeholder="Last Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
+  <section class="signup-container">
+    <h2>Create an Account</h2>
+    <form action="#" method="POST">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+
       <button type="submit">Sign Up</button>
     </form>
-  </main>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 My Bird Photography</p>
+  </footer>
 </body>
 </html>
