@@ -2,26 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo Gallery</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    if (localStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "login.html";
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fdf9f6;
+      color: #444;
+      line-height: 1.6;
     }
+
+    a { color: #2e6f5e; text-decoration: none; transition: color 0.3s ease; }
+    a:hover { color: #166143; }
+
+    /* Black Top Bar */
+    .top-bar {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1rem 1rem 0.5rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .top-right-links {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 1rem;
+      font-weight: 500;
+    }
+
+    .top-right-links a {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .top-right-links a:hover { text-decoration: underline; }
+
+    header h1 {
+      margin: 0.5rem 0 0.2rem 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a.gallery-link {
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #fff;
+      color: #000;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav a.gallery-link:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* Gallery */
+    .gallery {
+      max-width: 960px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+      cursor: default;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2.3rem; }
+      nav a.gallery-link { font-size: 1rem; padding: 0.4rem 1rem; }
+      .top-right-links { position: static; justify-content: center; margin-bottom: 1rem; }
+    }
+  </style>
+
+  <script>
+    // Redirect if not logged in
+   // if (localStorage.getItem("loggedIn") !== "true") {
+  //    window.location.href = "login.html";
+  //  }
+
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
   </script>
 </head>
 
 <body>
-    <header>
-        <h1>Bird Photo Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a>
-        </nav>
-    </header>
 
-    <section class="gallery">
-        <h2>My Bird Photos</h2>
-        <div class="grid">
+  <div class="top-bar">
+    ✨ Free shipping on orders $75+ ✨
+  </div>
+
+  <header>
+    <div class="top-right-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <h1>My Bird Photography</h1>
+    <nav>
+      <a href="index.html" class="gallery-link">Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="gallery">
+    <h2>My Bird Photos</h2>
+    <div class="grid">
+      <!-- Add all your images here -->
             <img src="gallery/1.JPG" alt="Bird 1">
             <img src="gallery/2.JPG" alt="Bird 2">
             <img src="gallery/3.JPG" alt="Bird 3">
@@ -164,12 +302,12 @@
             <img src="gallery/140.JPG" alt="Bird 140">
             <img src="gallery/141.JPG" alt="Bird 141">
             <img src="gallery/142.JPG" alt="Bird 142">
+    </div>
+  </section>
 
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2025 My Bird Photography</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 My Bird Photography</p>
-    </footer>
 </body>
 </html>
