@@ -60,18 +60,19 @@
       font-size: 0.9rem;
     }
 
-.top-right-links a {
-  padding: 0.25rem 0.5rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #000000; /* Black text */
-  font-weight: 500;
-}
+    .top-right-links a {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: #000000;
+      font-weight: 500;
+    }
 
-.top-right-links a:hover {
-  border-color: #000000;
-  background: #f0f0f0; /* Optional light gray hover background */
-}
+    .top-right-links a:hover {
+      border-color: #000000;
+      background: #f0f0f0;
+    }
+
     header h1 {
       margin: 0.5rem 0 0.2rem 0;
       font-family: 'Great Vibes', cursive;
@@ -92,22 +93,22 @@
       margin-bottom: 1rem;
     }
 
-nav .gallery-link {
-  font-weight: 600;
-  font-size: 1.1rem;
-  background: #ffffff;
-  color: #000000;
-  padding: 0.5rem 1.25rem;
-  border: 2px solid #000000;
-  border-radius: 4px;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
+    nav .gallery-link {
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #ffffff;
+      color: #000000;
+      padding: 0.5rem 1.25rem;
+      border: 2px solid #000000;
+      border-radius: 4px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
 
-nav .gallery-link:hover {
-  background: #000000;
-  color: #ffffff;
-}
+    nav .gallery-link:hover {
+      background: #000000;
+      color: #ffffff;
+    }
 
     /* Gallery */
     .gallery {
@@ -122,18 +123,38 @@ nav .gallery-link:hover {
       gap: 1.25rem;
     }
 
-    .grid img {
+    /* Image wrapper to block clicks and right-clicks */
+    .img-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: default;
+    }
+
+    .img-wrapper img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.12);
       transition: transform 0.3s ease;
-      cursor: pointer;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+      pointer-events: none; /* Prevent clicks on the image */
     }
 
-    .grid img:hover {
+    .img-wrapper img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .img-wrapper .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     /* About */
@@ -177,24 +198,22 @@ nav .gallery-link:hover {
       color: #2e6f5e;
     }
     a.email-link {
-  color: black;
-  text-decoration: none;
-}
+      color: black;
+      text-decoration: none;
+    }
+    a.email-link:hover {
+      text-decoration: underline;
+    }
 
-a.email-link:hover {
-  text-decoration: underline;
-}
-
-
-footer {
-  background: #000000; /* black background */
-  color: #ffffff;       /* white text */
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
-}
+    footer {
+      background: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    }
 
     /* Responsive */
     @media (max-width: 480px) {
@@ -213,7 +232,9 @@ footer {
     }
   </style>
 </head>
-<body>
+
+<!-- Disable right-click globally -->
+<body oncontextmenu="return false;">
 
   <!-- Black Bar -->
   <div class="top-bar">
@@ -237,12 +258,30 @@ footer {
   <!-- Gallery -->
   <section class="gallery">
     <div class="grid">
-      <img src="images/bird1.jpg" alt="Beautiful bird" />
-      <img src="images/bird2.JPG" alt="Beautiful bird" />
-      <img src="images/bird3.JPG" alt="Beautiful bird" />
-      <img src="images/bird4.JPG" alt="Beautiful bird" />
-      <img src="images/bird5.JPG" alt="Beautiful bird" />
-      <img src="images/bird6.JPG" alt="Beautiful bird" />
+      <div class="img-wrapper">
+        <img src="images/bird1.jpg" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/bird2.JPG" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/bird3.JPG" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/bird4.JPG" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/bird5.JPG" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/bird6.JPG" alt="Beautiful bird" />
+        <div class="overlay"></div>
+      </div>
     </div>
   </section>
 
